@@ -11,6 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/','PublicController@index');
+
+Route::namespace('Admin')->prefix('admin')->group(function(){
+
+    Route::get('users','UsersController@listUsers');
+    Route::get('post',function(){
+      return 'admin post';
+    });
+
 });
