@@ -10,10 +10,14 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('posts','PublicController@displayPosts')->name('displayPosts');
+
 
 Route::get('/','PublicController@index');
 
 Route::namespace('Admin')->prefix('admin')->group(function(){
+
+
 
     Route::get('users','UsersController@listUsers');
     Route::get('post',function(){
